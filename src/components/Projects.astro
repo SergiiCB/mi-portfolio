@@ -53,7 +53,7 @@ const projectList = [
       <button class="filter-btn px-5 py-2 rounded-full glass-border text-text-secondary text-sm font-medium hover:bg-accent hover:text-white hover:border-accent transition-all" data-filter="ai">AI / ML</button>
     </div>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {projectList.map((p, i) => (
         <div class="group bg-white/3 border border-white/6 rounded-2xl overflow-hidden hover:shadow-2xl hover:shadow-black/30 transition-all duration-300 reveal project-card" data-category={p.cat} style={{transitionDelay: `${i*0.1}s`}}>
           
@@ -83,7 +83,7 @@ const projectList = [
 
           <div class="p-5">
             <div class="flex gap-1.5 mb-3 flex-wrap">
-              {p.tags.map(t => <span class="text-[10px] px-2.5 py-0.5 bg-accent/10 text-accent-light rounded-full font-semibold uppercase tracking-wide">{t}</span>)}
+              {p.tags.map(t => ( <span class="text-[10px] px-2.5 py-0.5 bg-accent/10 text-accent-light rounded-full font-semibold uppercase tracking-wide whitespace-nowrap"> {t} </span> ))}
             </div>
             <h3 class="text-lg font-bold mb-1" data-i18n={p.titleKey}>Cargando...</h3>
             <p class="text-text-secondary text-sm" data-i18n={`${p.titleKey}_desc`}>Cargando descripción...</p>

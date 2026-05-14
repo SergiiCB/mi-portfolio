@@ -1,5 +1,5 @@
 ---
-// About.astro - Versión Aeroespacial Limpia
+// About.astro
 import miFoto from '../assets/images/mi-foto.webp';
 ---
 <section class="relative z-20 py-24 px-6" id="about">
@@ -18,9 +18,9 @@ import miFoto from '../assets/images/mi-foto.webp';
           <img src={miFoto.src} alt="Foto de Sergi" class="about-image-content w-full h-full object-cover relative z-20" />
         </div>
         <!-- Decoración ahora en azul accent -->
-        <div class="about-image-decoration absolute w-full h-full border-2 border-accent rounded-2xl top-5 left-5 -z-10 opacity-30"></div>
+        <div class="about-image-decoration absolute w-full h-full border-2 border-accent rounded-2xl top-3 left-3 md:top-5 md:left-5 -z-10 opacity-30"></div>
         
-        <div class="about-stats absolute bottom-2 right-2 flex gap-2 z-30">
+        <div class="about-stats flex flex-wrap md:absolute md:bottom-2 md:right-2 gap-2 z-30 mt-4 md:mt-0 justify-center md:justify-end">
           <div class="stat-card bg-bg-primary/90 backdrop-blur-xl border border-white/10 p-4 rounded-xl text-center shadow-2xl">
             <!-- Texto con gradiente azul -->
             <div class="stat-number text-2xl font-extrabold text-gradient counter" data-target="5">0</div>
