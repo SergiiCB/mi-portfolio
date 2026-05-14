@@ -1,5 +1,6 @@
 ---
 // About.astro - Versión Aeroespacial Limpia
+import miFoto from '../assets/images/mi-foto.webp';
 ---
 <section class="relative z-20 py-24 px-6" id="about">
   <div class="max-w-6xl mx-auto">
@@ -14,7 +15,7 @@
         <!-- Eliminado gradiente rosa, ahora usa el gradiente principal azul -->
         <div class="about-image w-full aspect-[4/3] rounded-2xl overflow-hidden relative bg-gradient-main">
           <div class="absolute inset-0 bg-blue-950 z-10"></div>
-          <img src="/src/assets/images/mi-foto.webp" alt="Foto de Sergi" class="about-image-content w-full h-full object-cover relative z-20" />
+          <img src={miFoto.src} alt="Foto de Sergi" class="about-image-content w-full h-full object-cover relative z-20" />
         </div>
         <!-- Decoración ahora en azul accent -->
         <div class="about-image-decoration absolute w-full h-full border-2 border-accent rounded-2xl top-5 left-5 -z-10 opacity-30"></div>
