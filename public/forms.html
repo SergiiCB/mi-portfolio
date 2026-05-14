@@ -1,7 +1,13 @@
 <!-- public/forms.html -->
-<form name="contact" data-netlify="true" hidden>
-  <input type="text" name="name" />
-  <input type="email" name="email" />
-  <input type="text" name="subject" />
-  <textarea name="message"></textarea>
-</form>
+<!DOCTYPE html>
+<html>
+<body>
+  <h1>Form Test</h1>
+  <form name="contact" method="POST" data-netlify="true">
+    <input type="text" name="name" placeholder="Name" required />
+    <input type="email" name="email" placeholder="Email" required />
+    <textarea name="message" placeholder="Message"></textarea>
+    <button type="submit">Enviar Prueba Manual</button>
+  </form>
+</body>
+</html>
