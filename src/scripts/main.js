@@ -235,15 +235,24 @@ function initContactForm() {
   if (!form || !toast) return;
 
   form.addEventListener('submit', e => {
-    e.preventDefault();
+    e.preventDefault(); // Evitamos que la página se recargue
+    
     const btn = form.querySelector('button[type="submit"]');
     const originalText = btn.innerHTML;
     
     btn.innerHTML = '⏳ Enviando...';
     btn.disabled = true;
 
-    // Simulación de envío
-    setTimeout(() => {
+    // --- ENVÍO REAL A NETLIFY ---
+    const formData = new FormData(form);
+    
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
+    })
+    .then(() => {
+      // Si el envío es correcto, mostramos animación
       btn.innerHTML = originalText;
       btn.disabled = false;
       form.reset();
@@ -253,7 +262,12 @@ function initContactForm() {
       
       toast.classList.add('show');
       setTimeout(() => toast.classList.remove('show'), 4000);
-    }, 1500);
+    })
+    .catch((error) => {
+      alert("Error al enviar: " + error);
+      btn.innerHTML = originalText;
+      btn.disabled = false;
+    });
   });
 }
 
