@@ -1,0 +1,45 @@
+---
+// Skills.astro - Versión Aeroespacial Limpia
+---
+<section class="relative z-20 py-24 px-6 bg-bg-secondary/30" id="skills">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16 reveal">
+      <span class="text-xs font-semibold uppercase tracking-widest text-accent-light block mb-4" data-i18n="skills_label">Habilidades</span>
+      <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4" data-i18n="skills_title">Mi stack tecnológico</h2>
+      <p class="text-text-secondary max-w-lg mx-auto" data-i18n="skills_subtitle">Las herramientas y tecnologías que domino</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {[
+        {icon: '🐍', title: 'Advanced Analytics & Spark', desc: 'Python, RStudio, Apache Spark, Pandas, Scikit-learn, SciPy', percent: 90 },
+        {icon: '🛰️', title: 'Geospatial Data Science', desc: 'Google Earth Engine, Sentinel-2, NDVI, Geemap, Rasterio, Shapely', percent: 80 },
+        {icon: '🐳', title: 'DevOps & Modern Web', desc: 'Docker, FastAPI, Astro, Tailwind CSS, GitHub Actions, Terraform', percent: 75 },
+        {icon: '🤖', title: 'AI & Local LLMs (RAG)', desc: 'RAG Architecture, LM Studio, Ollama, OpenAI SDK, Prompt Engineering', percent: 70 },
+        {icon: '🗄️', title: 'Database Engineering', desc: 'PostgreSQL + PostGIS, MongoDB, SQL Server, Snowflake', percent: 70 },
+        {icon: '📊', title: 'Visualization & BI', desc: 'Streamlit, Tableau, Power BI, Plotly, Folium, Matplotlib', percent: 90 }
+      ].map((s, i) => (
+        <div class="group bg-white/3 border border-white/6 rounded-2xl p-6 hover:border-accent/40 hover:bg-white/5 transition-all duration-300 relative overflow-hidden reveal" style={{transitionDelay: `${i*0.1}s`}}>
+          
+          <!-- Línea decorativa superior: Ahora azul -->
+          <div class="absolute top-0 left-0 right-0 h-0.5 bg-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-400 origin-center"></div>
+          
+          <div class="w-12 h-12 rounded-xl bg-accent/15 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform duration-300">{s.icon}</div>
+          
+          <h3 class="text-lg font-bold mb-2">{s.title}</h3>
+          <p class="text-text-secondary text-sm mb-4">{s.desc}</p>
+          
+          <!-- Barra de progreso: Ahora usa el gradiente azul -->
+          <div class="w-full h-1 bg-white/5 rounded-full overflow-hidden">
+            <div 
+              class="skill-bar h-full rounded-full bg-gradient-to-r from-accent to-blue-600" 
+              data-width={s.percent} 
+              style="width: 0%"
+            ></div>
+          </div>
+          
+          <div class="text-xs text-accent-light font-semibold text-right mt-1 font-mono">{s.percent}%</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,91 @@
+---
+// Projects.astro
+const projectList = [
+  {
+    cat: 'web', 
+    image: '/src/assets/images/soon.webp', 
+    tags: ['Python','Postgis','Google-earth-engine','Docker','RAG-LLM','Geoai','Streamlit'], 
+    titleKey: 'project1_title',
+    linkRepo: 'https://github.com/tu-usuario/proyecto-1',
+    linkExternal: 'https://public.tableau.com/perfil/proyecto-1'
+  },
+  {
+    cat: 'web', 
+    image: '/src/assets/images/project2.webp', 
+    tags: ['Python', 'Pandas','Scikit-learn','SciPy','Folium','Docker','Rapidapi','Tableau'], 
+    titleKey: 'project2_title',
+    linkRepo: 'https://github.com/SergiiCB/tfg-aviation-air-quality/blob/main/README.md',
+    linkExternal: 'https://sergiicb.github.io/tfg-aviation-air-quality/outputs/maps/interactive_map.html'
+  },
+  {
+    cat: 'ai', 
+    image: '/src/assets/images/project3.webp', 
+    tags: ['Tableau'], 
+    titleKey: 'project3_title',
+    linkRepo: '',
+    linkExternal: 'https://public.tableau.com/app/profile/sergicb/viz/IncendiosforestalesenEspaaentre2001y2015/Dashboard1'
+  },
+  {
+    cat: 'ai', 
+    image: '/src/assets/images/soon.webp', 
+    tags: [''], 
+    titleKey: 'project4_title',
+    linkRepo: '',
+    linkExternal: ''
+  }
+];
+---
+<section class="relative z-20 py-24 px-6" id="projects">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-12 reveal">
+      <span class="text-xs font-semibold uppercase tracking-widest text-accent-light block mb-4" data-i18n="projects_label">Proyectos</span>
+      <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4" data-i18n="projects_title">Trabajo destacado</h2>
+      <p class="text-text-secondary max-w-lg mx-auto" data-i18n="projects_subtitle">Una selección de mis mejores proyectos recientes</p>
+    </div>
+
+    <div class="flex justify-center gap-2 mb-10 flex-wrap reveal">
+      <button class="filter-btn px-5 py-2 rounded-full glass-border text-text-secondary text-sm font-medium hover:bg-accent hover:text-white hover:border-accent transition-all active" data-filter="all" data-i18n="filter_all">Todos</button>
+      <button class="filter-btn px-5 py-2 rounded-full glass-border text-text-secondary text-sm font-medium hover:bg-accent hover:text-white hover:border-accent transition-all" data-filter="web">Data Science</button>
+      <button class="filter-btn px-5 py-2 rounded-full glass-border text-text-secondary text-sm font-medium hover:bg-accent hover:text-white hover:border-accent transition-all" data-filter="ai">AI / ML</button>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {projectList.map((p, i) => (
+        <div class="group bg-white/3 border border-white/6 rounded-2xl overflow-hidden hover:shadow-2xl hover:shadow-black/30 transition-all duration-300 reveal project-card" data-category={p.cat} style={{transitionDelay: `${i*0.1}s`}}>
+          
+          <div class="h-52 relative overflow-hidden bg-bg-secondary">
+            <img src={p.image} alt="Project Preview" class="w-full h-full object-cover transition-transform duration-400 group-hover:scale-105" />
+            
+            <!-- Overlay con Iconos SVG Condicionales -->
+            <div class="absolute inset-0 bg-bg-primary/70 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-400">
+              
+              {p.linkExternal && (
+                <a href={p.linkExternal} target="_blank" rel="noopener noreferrer" 
+                   class="w-11 h-11 rounded-full glass flex items-center justify-center text-white hover:bg-accent hover:border-accent hover:scale-110 transition-all"
+                   title="Ver visualización">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                </a>
+              )}
+
+              {p.linkRepo && (
+                <a href={p.linkRepo} target="_blank" rel="noopener noreferrer" 
+                   class="w-11 h-11 rounded-full glass flex items-center justify-center text-white hover:bg-accent hover:border-accent hover:scale-110 transition-all"
+                   title="Ver código">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                </a>
+              )}
+            </div>
+          </div>
+
+          <div class="p-5">
+            <div class="flex gap-1.5 mb-3 flex-wrap">
+              {p.tags.map(t => <span class="text-[10px] px-2.5 py-0.5 bg-accent/10 text-accent-light rounded-full font-semibold uppercase tracking-wide">{t}</span>)}
+            </div>
+            <h3 class="text-lg font-bold mb-1" data-i18n={p.titleKey}>Cargando...</h3>
+            <p class="text-text-secondary text-sm" data-i18n={`${p.titleKey}_desc`}>Cargando descripción...</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

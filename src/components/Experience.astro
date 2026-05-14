@@ -1,0 +1,31 @@
+---
+// Experience.astro - TIMELINE ORIGINAL RESTAURADO
+const experienceItems = [
+  {date: '2026 — Presente', roleKey: 'exp_role_1', comp: 'Próximamente...', descKey: 'exp_desc_1'},
+  {date: '2021 — 2026', roleKey: 'exp_role_2', comp: 'Universitat Oberta de Catalunya (UOC)', descKey: 'exp_desc_2'},
+  {date: '2021 — 2023', roleKey: 'exp_role_3', comp: 'AUTOMOBILS CALAFELL SL', descKey: 'exp_desc_3'}
+];
+---
+<section class="relative z-20 py-24 px-6 bg-bg-secondary/30" id="experience">
+  <div class="max-w-4xl mx-auto">
+    <div class="text-center mb-16 reveal">
+      <span class="text-xs font-semibold uppercase tracking-widest text-accent-light block mb-4" data-i18n="exp_label">Experiencia</span>
+      <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4" data-i18n="exp_title">Mi trayectoria</h2>
+      <p class="text-text-secondary max-w-lg mx-auto" data-i18n="exp_subtitle">Los hitos más importantes de mi carrera</p>
+    </div>
+    <div class="relative max-w-3xl mx-auto">
+      <div class="absolute left-1/2 -translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-accent/50 via-accent/20 to-transparent"></div>
+      {experienceItems.map((e, i) => (
+        <div class={`flex ${i%2===0 ? 'justify-end pr-[calc(50%+30px)]' : 'justify-start pl-[calc(50%+30px)]'} relative mb-12 reveal`}>
+          <div class="absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-accent rounded-full border-[3px] border-bg-primary z-10 shadow-[0_0_15px_rgba(56,189,248,0.4)]"></div>
+          <div class="bg-white/3 border border-white/6 rounded-xl p-4 max-w-sm hover:border-white/10 hover:-translate-y-0.5 transition-all duration-300">
+            <div class="text-xs text-accent-light font-semibold font-mono mb-1">{e.date}</div>
+            <h3 class="text-base font-bold mb-0.5" data-i18n={e.roleKey}>Cargando...</h3>
+            <h4 class="text-sm text-accent-light font-medium mb-2">{e.comp}</h4>
+            <p class="text-text-secondary text-sm" data-i18n={e.descKey}>Cargando...</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

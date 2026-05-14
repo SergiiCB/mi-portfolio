@@ -1,0 +1,39 @@
+<header class="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-5xl z-40 px-6 py-3 transition-all duration-400 rounded-full glass will-change-transform" id="navbar">
+  <div class="flex justify-between items-center">
+    <a href="#hero" class="text-2xl font-extrabold text-gradient tracking-tight">SC.</a>
+    
+    <nav class="hidden md:flex items-center gap-1">
+      <a href="#hero" class="nav-link px-4 py-2 text-sm font-medium text-text-secondary rounded-full hover:text-text-primary hover:bg-white/10 transition-all" data-i18n="nav_home">Inicio</a>
+      <a href="#about" class="nav-link px-4 py-2 text-sm font-medium text-text-secondary rounded-full hover:text-text-primary hover:bg-white/10 transition-all" data-i18n="nav_about">Sobre mí</a>
+      <a href="#skills" class="nav-link px-4 py-2 text-sm font-medium text-text-secondary rounded-full hover:text-text-primary hover:bg-white/10 transition-all" data-i18n="nav_skills">Habilidades</a>
+      <a href="#projects" class="nav-link px-4 py-2 text-sm font-medium text-text-secondary rounded-full hover:text-text-primary hover:bg-white/10 transition-all" data-i18n="nav_projects">Proyectos</a>
+      <a href="#experience" class="nav-link px-4 py-2 text-sm font-medium text-text-secondary rounded-full hover:text-text-primary hover:bg-white/10 transition-all" data-i18n="nav_exp">Experiencia</a>
+      <a href="#contact" class="nav-link px-4 py-2 text-sm font-medium text-text-secondary rounded-full hover:text-text-primary hover:bg-white/10 transition-all" data-i18n="nav_contact">Contacto</a>
+      
+      <!-- Idiomas Desktop -->
+      <div class="flex gap-2 ml-4 border-l border-white/10 pl-4">
+        <button class="lang-btn text-xs font-bold hover:text-accent" data-lang="es">ES</button>
+        <button class="lang-btn text-xs font-bold hover:text-accent opacity-50" data-lang="en">EN</button>
+        <button class="lang-btn text-xs font-bold hover:text-accent opacity-50" data-lang="ca">CA</button>
+      </div>
+    </nav>
+
+    <button id="navToggle" class="md:hidden flex flex-col gap-1.5 p-2">
+      <span class="w-6 h-0.5 bg-text-primary rounded transition-all"></span>
+      <span class="w-6 h-0.5 bg-text-primary rounded transition-all"></span>
+      <span class="w-6 h-0.5 bg-text-primary rounded transition-all"></span>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="fixed inset-0 bg-bg-primary/95 backdrop-blur-2xl flex flex-col items-center justify-center gap-6 translate-x-full transition-transform duration-500 md:hidden rounded-[2rem] m-2 border border-white/10">
+    <a href="#hero" class="mobile-link text-2xl font-semibold text-text-secondary" data-i18n="nav_home">Inicio</a>
+    <a href="#about" class="mobile-link text-2xl font-semibold text-text-secondary" data-i18n="nav_about">Sobre mí</a>
+    <a href="#contact" class="mobile-link text-2xl font-semibold text-text-secondary" data-i18n="nav_contact">Contacto</a>
+    <div class="flex gap-4 mt-4">
+      <button class="lang-btn font-bold" data-lang="es">ES</button>
+      <button class="lang-btn font-bold opacity-50" data-lang="en">EN</button>
+      <button class="lang-btn font-bold opacity-50" data-lang="ca">CA</button>
+    </div>
+  </div>
+</header>

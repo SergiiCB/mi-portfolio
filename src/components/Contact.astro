@@ -1,0 +1,65 @@
+---
+// Contact.astro
+---
+<section class="relative z-20 py-24 px-6" id="contact">
+  <div class="max-w-4xl mx-auto">
+    <div class="text-center mb-12 reveal">
+      <span class="text-xs font-semibold uppercase tracking-widest text-accent-light block mb-4" data-i18n="contact_label">Contacto</span>
+      <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4" data-i18n="contact_title">Trabajemos juntos</h2>
+      <p class="text-text-secondary max-w-lg mx-auto" data-i18n="contact_subtitle">¿Tienes un proyecto en mente? ¡Hablemos!</p>
+    </div>
+
+    <div class="grid md:grid-cols-5 gap-8">
+      <div class="md:col-span-2 flex flex-col gap-6 reveal">
+        <h3 class="text-3xl font-bold tracking-tight text-gradient" data-i18n="contact_cta">¡Hagamos algo<br>increíble juntos!</h3>
+        <p class="text-text-secondary" data-i18n="contact_desc">Estoy siempre abierto a nuevas oportunidades y colaboraciones interesantes.</p>
+        
+        <div class="flex flex-col gap-3">
+          <a href="mailto:sergicozar@gmail.com" class="flex items-center gap-3 p-3 bg-white/3 border border-white/6 rounded-lg hover:border-accent hover:translate-x-1 transition-all">
+            <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center text-lg">📧</div>
+            <div><span class="block text-xs text-text-secondary" data-i18n="form_email_label">Email</span><strong class="text-sm">sergicozar@gmail.com</strong></div>
+          </a>
+          <a href="#" class="flex items-center gap-3 p-3 bg-white/3 border border-white/6 rounded-lg hover:border-accent hover:translate-x-1 transition-all">
+            <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center text-lg">📍</div>
+            <div><span class="block text-xs text-text-secondary" data-i18n="location_label">Ubicación</span><strong class="text-sm" data-i18n="location_city">Barcelona, España</strong></div>
+          </a>
+        </div>
+      </div>
+
+      <form 
+        id="contactForm" 
+        name="contact" 
+        method="POST" 
+        data-netlify="true" 
+        class="md:col-span-3 bg-white/3 border border-white/6 rounded-2xl p-6 reveal"
+      >
+        <input type="hidden" name="form-name" value="contact" />
+        
+        <div class="grid grid-cols-2 gap-4 mb-4">
+          <div>
+            <label class="block text-sm font-semibold mb-1 text-text-secondary" data-i18n="form_name">Nombre</label>
+            <input type="text" name="name" data-i18n-placeholder="p_name" required class="w-full p-3 bg-white/3 border border-white/6 rounded-lg text-text-primary focus:border-accent focus:ring-2 focus:ring-accent/30 outline-none transition-all">
+          </div>
+          <div>
+            <label class="block text-sm font-semibold mb-1 text-text-secondary" data-i18n="form_email">Email</label>
+            <input type="email" name="email" data-i18n-placeholder="p_email" required class="w-full p-3 bg-white/3 border border-white/6 rounded-lg text-text-primary focus:border-accent focus:ring-2 focus:ring-accent/30 outline-none transition-all">
+          </div>
+        </div>
+        
+        <div class="mb-4">
+          <label class="block text-sm font-semibold mb-1 text-text-secondary" data-i18n="form_subject">Asunto</label>
+          <input type="text" name="subject" data-i18n-placeholder="p_subject" class="w-full p-3 bg-white/3 border border-white/6 rounded-lg text-text-primary focus:border-accent focus:ring-2 focus:ring-accent/30 outline-none transition-all">
+        </div>
+        
+        <div class="mb-4">
+          <label class="block text-sm font-semibold mb-1 text-text-secondary" data-i18n="form_msg">Mensaje</label>
+          <textarea name="message" data-i18n-placeholder="p_msg" required class="w-full p-3 bg-white/3 border border-white/6 rounded-lg text-text-primary focus:border-accent focus:ring-2 focus:ring-accent/30 outline-none transition-all min-h-[120px] resize-y"></textarea>
+        </div>
+        
+        <button type="submit" class="btn-primary w-full justify-center cursor-pointer">
+          <span data-i18n="form_btn">Enviar mensaje</span>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
