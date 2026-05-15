@@ -14,11 +14,11 @@ const experienceItems = [
       <p class="text-text-secondary max-w-lg mx-auto" data-i18n="exp_subtitle">Los hitos más importantes de mi carrera</p>
     </div>
     <div class="relative max-w-3xl mx-auto">
-      <div class="absolute left-1/2 -translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-accent/50 via-accent/20 to-transparent"></div>
+      <div class="hidden md:block absolute left-1/2 -translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-accent/50 via-accent/20 to-transparent"></div>
       {experienceItems.map((e, i) => (
-        <div class={`flex flex-col md:flex-row ${i%2===0 ? 'md:justify-end md:pr-[calc(50%+30px)]' : 'md:justify-start md:pl-[calc(50%+30px)]'} relative mb-12 reveal`}>
-          <div class="absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-accent rounded-full border-[3px] border-bg-primary z-10 shadow-[0_0_15px_rgba(56,189,248,0.4)]"></div>
-          <div class="bg-white/3 border border-white/6 rounded-xl p-4 max-w-sm hover:border-white/10 hover:-translate-y-0.5 transition-all duration-300">
+        <div class={`flex flex-col md:flex-row items-center ${i%2===0 ? 'md:justify-end md:pr-[calc(50%+30px)]' : 'md:justify-start md:pl-[calc(50%+30px)]'} relative mb-12 reveal`}>
+          <div class="hidden md:block absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-accent rounded-full border-[3px] border-bg-primary z-10 shadow-[0_0_15px_rgba(56,189,248,0.4)]"></div>
+          <div class="w-full bg-white/3 border border-white/6 rounded-xl p-4 max-w-sm hover:border-white/10 hover:-translate-y-0.5 transition-all duration-300">
             <div class="text-xs text-accent-light font-semibold font-mono mb-1">{e.date}</div>
             <h3 class="text-base font-bold mb-0.5" data-i18n={e.roleKey}>Cargando...</h3>
             <h4 class="text-sm text-accent-light font-medium mb-2">{e.comp}</h4>
