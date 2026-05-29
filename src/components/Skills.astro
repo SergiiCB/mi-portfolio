@@ -1,6 +1,7 @@
 ---
 // Skills.astro
 ---
+
 <section class="relative z-20 py-24 px-6 bg-bg-secondary/30" id="skills">
   <div class="max-w-6xl mx-auto">
     <div class="text-center mb-16 reveal">
@@ -11,33 +12,38 @@
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {[
-        {icon: '🐍', title: 'Advanced Analytics & Spark', desc: 'Python, RStudio, Apache Spark, Pandas, Scikit-learn, SciPy', percent: 90 },
-        {icon: '🛰️', title: 'Geospatial Data Science', desc: 'Google Earth Engine, Sentinel-2, NDVI, Geemap, Rasterio, Shapely', percent: 80 },
-        {icon: '🐳', title: 'DevOps & Modern Web', desc: 'Docker, FastAPI, Astro, Tailwind CSS, GitHub Actions, Terraform', percent: 75 },
-        {icon: '🤖', title: 'AI & Local LLMs (RAG)', desc: 'RAG Architecture, LM Studio, Ollama, OpenAI SDK, Prompt Engineering', percent: 70 },
-        {icon: '🗄️', title: 'Database Engineering', desc: 'PostgreSQL + PostGIS, MongoDB, SQL Server, Snowflake', percent: 70 },
-        {icon: '📊', title: 'Visualization & BI', desc: 'Streamlit, Tableau, Power BI, Plotly, Folium, Matplotlib', percent: 90 }
+        { title: 'Analytics & Machine Learning', desc: 'Python, RStudio, PyTorch, Apache Spark, NumPy, Pandas, Scikit-learn, SciPy', tag: 'Advanced', svg: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cpu-icon lucide-cpu"><path d="M12 20v2"/><path d="M12 2v2"/><path d="M17 20v2"/><path d="M17 2v2"/><path d="M2 12h2"/><path d="M2 17h2"/><path d="M2 7h2"/><path d="M20 12h2"/><path d="M20 17h2"/><path d="M20 7h2"/><path d="M7 20v2"/><path d="M7 2v2"/><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="8" y="8" width="8" height="8" rx="1"/></svg>` },
+        { title: 'Geospatial Data Science', desc: 'Google Earth Engine, Sentinel-2, GeoPandas, NDVI, Geemap, Rasterio, Shapely', tag: 'Specialized', svg: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-satellite"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M3.707 6.293l2.586 -2.586a1 1 0 0 1 1.414 0l5.586 5.586a1 1 0 0 1 0 1.414l-2.586 2.586a1 1 0 0 1 -1.414 0l-5.586 -5.586a1 1 0 0 1 0 -1.414" /><path d="M6 10l-3 3l3 3l3 -3" /><path d="M10 6l3 -3l3 3l-3 3" /><path d="M12 12l1.5 1.5" /><path d="M14.5 17a2.5 2.5 0 0 0 2.5 -2.5" /><path d="M15 21a6 6 0 0 0 6 -6" /></svg>` },
+        { title: 'Data Engineering & DevOps', desc: 'Git, Docker, Apache Kafka, Redpanda, FastAPI, Astro, Tailwind CSS, GitHub Actions, Terraform', tag: 'DevOps', svg: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-boxes-icon lucide-boxes"><path d="M2.97 12.92A2 2 0 0 0 2 14.63v3.24a2 2 0 0 0 .97 1.71l3 1.8a2 2 0 0 0 2.06 0L12 19v-5.5l-5-3-4.03 2.42Z"/><path d="m7 16.5-4.74-2.85"/><path d="m7 16.5 5-3"/><path d="M7 16.5v5.17"/><path d="M12 13.5V19l3.97 2.38a2 2 0 0 0 2.06 0l3-1.8a2 2 0 0 0 .97-1.71v-3.24a2 2 0 0 0-.97-1.71L17 10.5l-5 3Z"/><path d="m17 16.5-5-3"/><path d="m17 16.5 4.74-2.85"/><path d="M17 16.5v5.17"/><path d="M7.97 4.42A2 2 0 0 0 7 6.13v4.37l5 3 5-3V6.13a2 2 0 0 0-.97-1.71l-3-1.8a2 2 0 0 0-2.06 0l-3 1.8Z"/><path d="M12 8 7.26 5.15"/><path d="m12 8 4.74-2.85"/><path d="M12 13.5V8"/></svg>` },
+        { title: 'AI & Local LLMs (RAG)', desc: 'RAG Architecture, Ollama, LM Studio, OpenAI SDK, Prompt Engineering', tag: 'Generative AI', svg: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-github-copilot"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M4 18v-5.5c0 -.667 .167 -1.333 .5 -2" /><path d="M12 7.5c0 -1 -.01 -4.07 -4 -3.5c-3.5 .5 -4 2.5 -4 3.5c0 1.5 0 4 3 4c4 0 5 -2.5 5 -4" /><path d="M4 12c-1.333 .667 -2 1.333 -2 2c0 1 0 3 1.5 4c3 2 6.5 3 8.5 3s5.499 -1 8.5 -3c1.5 -1 1.5 -3 1.5 -4c0 -.667 -.667 -1.333 -2 -2" /><path d="M20 18v-5.5c0 -.667 -.167 -1.333 -.5 -2" /><path d="M12 7.5l0 -.297l.01 -.269l.027 -.298l.013 -.105l.033 -.215c.014 -.073 .029 -.146 .046 -.22l.06 -.223c.336 -1.118 1.262 -2.237 3.808 -1.873c2.838 .405 3.703 1.797 3.93 2.842l.036 .204c0 .033 .01 .066 .013 .098l.016 .185l0 .171l0 .49l-.015 .394l-.02 .271c-.122 1.366 -.655 2.845 -2.962 2.845c-3.256 0 -4.524 -1.656 -4.883 -3.081l-.053 -.242a3.865 3.865 0 0 1 -.036 -.235l-.021 -.227a3.518 3.518 0 0 1 -.007 -.215l.005 0" /><path d="M10 15v2" /><path d="M14 15v2" /></svg>` },
+        { title: 'Database Engineering', desc: 'PostgreSQL + PostGIS, TimescaleDB, MongoDB, Redis, SQL Server', tag: 'Databases', svg: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-database-search"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M4 6c0 1.657 3.582 3 8 3s8 -1.343 8 -3s-3.582 -3 -8 -3s-8 1.343 -8 3" /><path d="M4 6v6c0 1.657 3.582 3 8 3m8 -3.5v-5.5" /><path d="M4 12v6c0 1.657 3.582 3 8 3" /><path d="M15 18a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M20.2 20.2l1.8 1.8" /></svg>` },
+        { title: 'Visualization & BI', desc: 'Streamlit, Tableau, Power BI, Plotly, Folium, Matplotlib', tag: 'Visualization', svg: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chart-histogram"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M3 3v18h18" /><path d="M20 18v3" /><path d="M16 16v5" /><path d="M12 13v8" /><path d="M8 16v5" /><path d="M3 11c6 0 5 -5 9 -5s3 5 9 5" /></svg>` }
       ].map((s, i) => (
-        <div class="group bg-white/3 border border-white/6 rounded-2xl p-6 hover:border-accent/40 hover:bg-white/5 transition-all duration-300 relative overflow-hidden reveal" style={{transitionDelay: `${i*0.1}s`}}>
+        <div class="group bg-white/3 border border-white/6 rounded-2xl p-6 hover:border-accent/40 hover:bg-white/5 transition-all duration-300 relative overflow-hidden reveal flex flex-col justify-between" style={{transitionDelay: `${i*0.1}s`}}>
           
-          <!-- Línea decorativa superior: Ahora azul -->
           <div class="absolute top-0 left-0 right-0 h-0.5 bg-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-400 origin-center"></div>
           
-          <div class="w-12 h-12 rounded-xl bg-accent/15 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform duration-300">{s.icon}</div>
-          
-          <h3 class="text-lg font-bold mb-2">{s.title}</h3>
-          <p class="text-text-secondary text-sm mb-4">{s.desc}</p>
-          
-          <!-- Barra de progreso: Ahora usa el gradiente azul -->
-          <div class="w-full h-1 bg-white/5 rounded-full overflow-hidden">
-            <div 
-              class="skill-bar h-full rounded-full bg-gradient-to-r from-accent to-blue-600" 
-              data-width={s.percent} 
-              style="width: 0%"
-            ></div>
+          <div>
+            <div class="flex justify-between items-start mb-4">
+              <div class="w-12 h-12 rounded-xl bg-accent/15 flex items-center justify-center text-accent-light group-hover:scale-110 transition-transform duration-300">
+                <Fragment set:html={s.svg} />
+              </div>
+              <span class="text-[10px] uppercase tracking-wider font-semibold px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-accent-light font-mono">
+                {s.tag}
+              </span>
+            </div>
+            
+            <h3 class="text-lg font-bold mb-3 text-center sm:text-left">{s.title}</h3>
+            
+            <div class="flex flex-wrap gap-1.5 justify-center sm:justify-start">
+              {s.desc.split(', ').map((tech) => (
+                <span class="text-xs px-2.5 py-1 rounded-md bg-white/[0.02] border border-white/5 text-text-secondary font-medium transition-colors duration-300 group-hover:border-accent/20 group-hover:text-white">
+                  {tech}
+                </span>
+              ))}
+            </div>
           </div>
           
-          <div class="text-xs text-accent-light font-semibold text-right mt-1 font-mono">{s.percent}%</div>
         </div>
       ))}
     </div>
